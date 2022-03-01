@@ -1,0 +1,18 @@
+pom.xml
+0.java version 수정
+<java.version>1.8</java.version>
+1. spring버전수정
+<!-- Spring -->
+		<!-- Spring framework 버전 4.3.22로 수정 -->
+		<spring-framework.version>4.3.22.RELEASE</spring-framework.version>
+		
+2. complier 버전 수정	
+		  <configuration>
+	   <!-- complier 버전 1.8로 수정 -->
+	    <source>1.8</source>
+	    <target>1.8</target>
+	   </configuration>
+	   
+3. 필요시 <dependencies> </dependencies> 사이에 디펜던시 추가 
+
+4. 프로젝트 maven - update 실행 jar파일 업데이트 후 프로젝트 작성 진행

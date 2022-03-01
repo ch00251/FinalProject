@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- 1. properties 등록 -->
+<context:property-placeholder location="classpath:com/config/jdbc.properties"/>
+	
+<!-- 2. DBCP2 -->
+<bean id="myDataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+	<property name="driverClassName" value="${oracle.jdbc}"></property>
+	<property name="url" value="${oracle.url}"></property>
+	<property name="username" value="${oracle.userid}"></property>
+	<property name="password" value="${oracle.passwd}"></property>
+</bean>
+
+<!-- 3. SqlSessionFactoryBean생성, mapper지정, alias지정 -->
+<bean id="mySqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="dataSource" ref="myDataSource"></property>
+	<property name="mapperLocations"><!-- mapper설정 -->
+		<list>
+			<!-- mapper 등록 -->
+		</list>
+	</property>
+	<property name="typeAliases">
+		<list>
+			<!-- dto등록 -->
+		</list>
+	</property>
+</bean>
+
+<!-- 4. SqlSessionTemplate 생성, SqlSession과 동일한 기능, 실제 dao에서 사용하는 객체 -->
+<bean id="mySqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+	<constructor-arg name="sqlSessionFactory" ref="mySqlSessionFactory"></constructor-arg>
+</bean>	
+</beans>
