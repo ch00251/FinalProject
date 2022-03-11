@@ -10,7 +10,7 @@
 <mvc:annotation-driven></mvc:annotation-driven>
 
 <!-- <mvc:view-controller path="/" view-name="main"/>  -->
-	
+	<mvc:view-controller path="/boardList" view-name="boardList"/>
 <!-- web-inf 폴더는 반드시 리소스 등록 후 사용 -->
 <mvc:resources location="/WEB-INF/views/images/" mapping="/images/**"></mvc:resources>
 
