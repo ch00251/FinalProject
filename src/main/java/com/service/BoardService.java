@@ -17,5 +17,10 @@ public class BoardService {
 		// TODO Auto-generated method stub
 		return dao.boardList(dto);
 	}
+
+	public BoardDTO boardRetrieve(int num) {
+		// TODO Auto-generated method stub
+		return dao.boardRetrieve(num);
+	}
 	
 }
