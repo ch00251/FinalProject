@@ -22,5 +22,10 @@ public class BoardService {
 		// TODO Auto-generated method stub
 		return dao.boardRetrieve(num);
 	}
+
+	public int addViewCount(int num) {
+		// TODO Auto-generated method stub
+		return dao.addViewCount(num);
+	}
 	
 }

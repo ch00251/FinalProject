@@ -34,6 +34,8 @@ public class BoardController {
 	public BoardDTO boardRetrieve(@RequestParam("num") int num) {
 		System.out.println(num);//상품번호 넘어오나 확인
 		BoardDTO dto=service.boardRetrieve(num);
+		//조회수 1 증가시키기
+		int n=service.addViewCount(num);
 		System.out.println(dto);
 		return dto;
 	}
