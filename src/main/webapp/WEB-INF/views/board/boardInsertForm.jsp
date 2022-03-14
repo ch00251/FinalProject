@@ -27,7 +27,7 @@
 <body>
 <div class="container">
 	<p>새글 추가 폼입니다.</p>
-	<form action="boardInsert" method="post">
+	<form action="boardInsert" method="get">
 		<div>
 			<label for="writer">작성자</label>
 			<input type="text" id="userid" name="userid"/>

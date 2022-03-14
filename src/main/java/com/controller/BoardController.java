@@ -3,6 +3,7 @@ package com.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -44,10 +45,10 @@ public class BoardController {
 	
 	//게시판 글 작성
 	@RequestMapping(value = "/boardInsert")
-	public String boardInsert(BoardDTO dto, Model m, HttpServletRequest request) {
+	public String boardInsert(BoardDTO dto, HttpSession session) {
 		service.boardInsert(dto);
 		System.out.println("게시판 insert:"+dto);
-		m.addAttribute("boardsuccess", "등록되었습니다");
+		session.setAttribute("success", "등록되었습니다.");
 		return "redirect:boardList";
 	}
 }
