@@ -27,5 +27,10 @@ public class BoardDAO {
 		// TODO Auto-generated method stub
 		return template.update("BoardMapper.addViewCount", num);
 	}
+
+	public void boardInsert(BoardDTO dto) {
+		// TODO Auto-generated method stub
+		template.insert("BoardMapper.boardInsert", dto);
+	}
 	
 }

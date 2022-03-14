@@ -11,6 +11,7 @@
 <body>
 <div class="container">
 <p>자유게시판 입니다</p>
+<a id="new" href="boardInsertForm" class="btn btn-outline-dark">새글 작성</a>
 <table width="100%">
 	<thead>
 		<tr>

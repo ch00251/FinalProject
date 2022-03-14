@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,5 +39,14 @@ public class BoardController {
 		int n=service.addViewCount(num);
 		System.out.println(dto);
 		return dto;
+	}
+	
+	//게시판 글 작성
+	@RequestMapping(value = "/boardInsert")
+	public String boardInsert(BoardDTO dto, Model m) {
+		service.boardInsert(dto);
+		System.out.println("게시판 insert:"+dto);
+		m.addAttribute("boardsuccess", "등록되었습니다");
+		return "redirect:boardList";
 	}
 }
