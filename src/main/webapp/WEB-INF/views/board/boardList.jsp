@@ -7,6 +7,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	table {
+	    width: 100%;
+	    border-top: 1px solid #444444;
+	    border-collapse: collapse;
+	}
+	th, td {
+	    border-bottom: 1px solid #444444;
+	    padding: 10px;
+	}
+	th {
+   		background-color: #93bf85;
+    }
+</style>
 </head>
 <body>
 <div class="container">
