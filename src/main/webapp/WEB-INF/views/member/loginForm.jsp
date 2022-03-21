@@ -35,11 +35,11 @@
 	}
 </style> 
 <div class="login">
-<form action="login" method="get">
+<form action="login" method="post">
 	<label for="id">아이디</label>
 	<input type="text" name="userid" id="userid" /><br>
 	<label for="pwd">비밀번호</label>
-	<input type="text" name="passwd" id="passwd" />
+	<input type="password" name="passwd" id="passwd" />
 <br><br />
 <input class="btn btn-outline-dark" type="submit" value="로그인">
 <input class="btn btn-outline-dark" type="reset" value="취소">

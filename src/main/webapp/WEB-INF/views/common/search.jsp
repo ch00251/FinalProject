@@ -25,7 +25,6 @@
  }
  
  button{
- 	margin-top:5px;  /* 추가 */
  	font-size : 40px;
  	width : 100px;
  	height : 100%;
