@@ -24,12 +24,14 @@
 		<list>
 			<!-- mapper 등록 -->
 			<value>classpath:com/config/BoardMapper.xml</value>
+			<value>classpath:com/config/MemberMapper.xml</value>
 		</list>
 	</property>
 	<property name="typeAliases">
 		<list>
 			<!-- dto등록 -->
 			<value>com.dto.BoardDTO</value>
+			<value>com.dto.MemberDTO</value>
 		</list>
 	</property>
 </bean>
