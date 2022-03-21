@@ -25,12 +25,18 @@ public class LoginController {
 		String page="main";
 		if(dto!=null) {
 			session.setAttribute("login", dto);
-			session.setMaxInactiveInterval(60*60);
 			return page;
 		}else {
 			page="loginForm";
 			m.addAttribute("mesg", "아이디 또는 비밀번호가 틀립니다.");
 			return page;
 		}
+	}
+	
+	//로그아웃
+	@RequestMapping(value = "/loginCheck/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:../";//main.jsp로
 	}
 }

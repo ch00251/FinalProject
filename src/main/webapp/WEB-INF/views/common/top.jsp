@@ -61,7 +61,7 @@
 		<!-- 로그인이 된 경우 -->
 		<c:if test="${!empty login }">
 			<a class="btn btn-outline-dark" href="#" style = "float: right;">마이페이지</a>&nbsp;
-			<a class="btn btn-outline-dark" href="#" style = "float: right;">로그아웃</a>&nbsp;
+			<a class="btn btn-outline-dark" href="loginCheck/logout" style = "float: right;">로그아웃</a>&nbsp;
 		</c:if>
 	</div>
 </div>
