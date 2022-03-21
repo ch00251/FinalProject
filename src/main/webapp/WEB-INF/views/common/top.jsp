@@ -53,6 +53,6 @@
 	<div class = "button" style="float: right;">
 		<!-- 회원가입 기능 구현 후 수정예정(회원가입,로그인/마이페이지,로그아웃) -->
 		<a class="btn btn-outline-dark" href = "#" style = "float: right;">회원가입</a> 
-		<a class="btn btn-outline-dark" href = "#" style="float: right;">로그인</a>
+		<a class="btn btn-outline-dark" href = "loginForm" style="float: right;">로그인</a>
 	</div>
 </div>
