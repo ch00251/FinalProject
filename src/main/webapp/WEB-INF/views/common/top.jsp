@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -51,8 +53,15 @@
 		<a href="/GreenFootPrints"><img src="images/title.PNG"></a>
 	</div>
 	<div class = "button" style="float: right;">
-		<!-- 회원가입 기능 구현 후 수정예정(회원가입,로그인/마이페이지,로그아웃) -->
-		<a class="btn btn-outline-dark" href = "#" style = "float: right;">회원가입</a> 
-		<a class="btn btn-outline-dark" href = "loginForm" style="float: right;">로그인</a>
+		<!-- 로그인이 안된 경우 -->
+		<c:if test="${empty login }">
+			<a class="btn btn-outline-dark" href="loginForm" style = "float: right;">로그인</a>&nbsp;
+			<a class="btn btn-outline-dark" href="#" style = "float: right;">회원가입</a>&nbsp;
+		</c:if>
+		<!-- 로그인이 된 경우 -->
+		<c:if test="${!empty login }">
+			<a class="btn btn-outline-dark" href="#" style = "float: right;">마이페이지</a>&nbsp;
+			<a class="btn btn-outline-dark" href="#" style = "float: right;">로그아웃</a>&nbsp;
+		</c:if>
 	</div>
 </div>
