@@ -58,6 +58,6 @@
  		<li><img src="images/재활용.png"></li>
  		<li><img src="images/녹색인증.png"></li>
  		<li><img src="images/이달의 녹색.png"></li>
- 		<li><a href="#"><img src="images/자유게시판.png"></a></li>
+ 		<li><a href="boardList"><img src="images/자유게시판.png"></a></li>
  	</ul>
  </div>

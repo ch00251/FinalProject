@@ -6,6 +6,17 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<%
+	String mesg=(String)session.getAttribute("mesg");
+	if(mesg!=null){
+%>
+	<script type="text/javascript">
+		alert("<%=mesg%>");
+	</script>
+<% 
+	session.removeAttribute("mesg");
+	}
+%>
 <body>
 <div class="container">
 <jsp:include page="common/top.jsp" flush="true"/><br>

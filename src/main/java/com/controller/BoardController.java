@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.dto.BoardDTO;
+import com.dto.MemberDTO;
 import com.service.BoardService;
 
 @Controller
@@ -23,12 +24,21 @@ public class BoardController {
 	
 	//게시판 리스트 보기
 	@RequestMapping(value = "/boardList")
-	public ModelAndView boardList(BoardDTO dto) {
-		List<BoardDTO> list=service.boardList(dto);
-		System.out.println("boardList:"+list);
-		ModelAndView mav=new ModelAndView();
-		mav.addObject("boardList", list);
-		return mav;
+	public ModelAndView boardList(BoardDTO dto, HttpServletRequest request) {
+		HttpSession session=request.getSession();
+		MemberDTO d=(MemberDTO)session.getAttribute("login");
+		if(d!=null) {
+			List<BoardDTO> list=service.boardList(dto);
+			System.out.println("boardList:"+list);
+			ModelAndView mav=new ModelAndView();
+			mav.addObject("boardList", list);
+			return mav;
+		}else {
+			session.setAttribute("mesg", "회원만 이용 가능합니다.");
+			ModelAndView mav=new ModelAndView();
+			mav.setViewName("loginForm");
+			return mav;
+		}
 	}
 
 	//게시판글 상세보기
