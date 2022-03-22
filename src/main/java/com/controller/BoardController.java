@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.dto.BoardDTO;
 import com.dto.MemberDTO;
@@ -23,22 +24,12 @@ public class BoardController {
 	BoardService service;
 	
 	//게시판 리스트 보기
-	@RequestMapping(value = "/boardList")
-	public ModelAndView boardList(BoardDTO dto, HttpServletRequest request) {
-		HttpSession session=request.getSession();
-		MemberDTO d=(MemberDTO)session.getAttribute("login");
-		if(d!=null) {
-			List<BoardDTO> list=service.boardList(dto);
-			System.out.println("boardList:"+list);
-			ModelAndView mav=new ModelAndView();
-			mav.addObject("boardList", list);
-			return mav;
-		}else {
-			session.setAttribute("mesg", "회원만 이용 가능합니다.");
-			ModelAndView mav=new ModelAndView();
-			mav.setViewName("loginForm");
-			return mav;
-		}
+	@RequestMapping(value = "/loginCheck/boardList")
+	public String boardList(BoardDTO dto, RedirectAttributes attr) {//redirect시 데이터 유지를 위해 RedirectAttributes를 사용
+		List<BoardDTO> list=service.boardList(dto);
+		System.out.println("boardList:"+list);
+		attr.addFlashAttribute("boardList", list);
+		return "redirect:../boardList";
 	}
 
 	//게시판글 상세보기

@@ -1,3 +1,4 @@
+<%@page import="com.dto.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -71,7 +72,7 @@
 </div>
 <br />
 <div class="bottom">
-	<a class="btn btn-outline-dark" href="boardList">목록 보기</a>
+	<a class="btn btn-outline-dark" href="loginCheck/boardList">목록 보기</a>
 </div>
 <br />
 </body>

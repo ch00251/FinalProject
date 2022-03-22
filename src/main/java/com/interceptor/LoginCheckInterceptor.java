@@ -16,6 +16,7 @@ public class LoginCheckInterceptor extends HandlerInterceptorAdapter{
 		System.out.println("preHandle=======");
 		HttpSession session=request.getSession();
 		if(session.getAttribute("login")==null) {
+			session.setAttribute("mesg", "회원만 이용 가능합니다.");
 			response.sendRedirect("../loginForm");
 			return false;
 		}else {//로그인 한 경우

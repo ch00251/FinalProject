@@ -23,5 +23,5 @@
 	<span class = "menu_1"><a href = "#">환경인증제품</a></span>
 	<span class = "menu_1"><a href = "#">공지사항</a></span>
 	<span class = "menu_1"><a href = "#">제품등록</a></span>
-	<span class = "menu_1"><a href = "boardList">자유게시판</a></span>
+	<span class = "menu_1"><a href = "loginCheck/boardList">자유게시판</a></span>
 </div>
