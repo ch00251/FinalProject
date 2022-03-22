@@ -35,9 +35,10 @@ public class BoardController {
 	//게시판글 상세보기
 	@RequestMapping(value = "/boardRetrieve")
 	@ModelAttribute("boardRetrieve")
-	public BoardDTO boardRetrieve(@RequestParam("num") int num) {
+	public BoardDTO boardRetrieve(@RequestParam("num") int num, HttpSession session) {
 		System.out.println(num);//상품번호 넘어오나 확인
 		BoardDTO dto=service.boardRetrieve(num);
+		session.setAttribute("dto", dto);
 		//조회수 1 증가시키기
 		int n=service.addViewCount(num);
 		System.out.println(dto);

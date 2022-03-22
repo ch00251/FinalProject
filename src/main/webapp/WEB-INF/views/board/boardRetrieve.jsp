@@ -1,3 +1,4 @@
+<%@page import="com.dto.BoardDTO"%>
 <%@page import="com.dto.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -72,7 +73,20 @@
 </div>
 <br />
 <div class="bottom">
-	<a class="btn btn-outline-dark" href="loginCheck/boardList">목록 보기</a>
+<%
+	MemberDTO d=(MemberDTO)session.getAttribute("login");
+	String id=d.getUserid();
+	BoardDTO dd=(BoardDTO)session.getAttribute("dto");
+	String userid=dd.getUserid();
+	System.out.println("로그인 한 아이디:"+id);
+	System.out.println("글 작성한 아이디:"+userid);
+	if(id.equals(userid)){ %>
+		<a class="btn btn-outline-dark" href="loginCheck/boardList">목록 보기</a>
+		<a class="btn btn-outline-dark" href="#">수정하기</a>
+		<a class="btn btn-outline-dark" href="#">삭제하기</a>
+	<%}else{%>
+		<a class="btn btn-outline-dark" href="loginCheck/boardList">목록 보기</a>
+	<%}%>
 </div>
 <br />
 </body>
