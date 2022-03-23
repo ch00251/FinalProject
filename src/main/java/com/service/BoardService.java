@@ -33,5 +33,10 @@ public class BoardService {
 		System.out.println(dao);
 		dao.boardInsert(dto);
 	}
+
+	public void boardUpdate(BoardDTO dto) {
+		// TODO Auto-generated method stub
+		dao.boardUpdate(dto);
+	}
 	
 }

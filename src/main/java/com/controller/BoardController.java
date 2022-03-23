@@ -38,7 +38,7 @@ public class BoardController {
 	public BoardDTO boardRetrieve(@RequestParam("num") int num, HttpSession session) {
 		System.out.println(num);//상품번호 넘어오나 확인
 		BoardDTO dto=service.boardRetrieve(num);
-		session.setAttribute("dto", dto);
+		session.setAttribute("board", dto);
 		//조회수 1 증가시키기
 		int n=service.addViewCount(num);
 		System.out.println(dto);
@@ -52,5 +52,13 @@ public class BoardController {
 		System.out.println("게시판 insert:"+dto);
 		session.setAttribute("success", "등록되었습니다.");
 		return "redirect:boardList";
+	}
+	
+	//게시판 글 수정
+	@RequestMapping(value = "/loginCheck/boardUpdate")
+	public String boardUpdate(BoardDTO dto) {
+		service.boardUpdate(dto);
+		System.out.println("업데이트 내용:"+dto);
+		return "redirect:../boardRetrieve?num="+dto.getNum();
 	}
 }
