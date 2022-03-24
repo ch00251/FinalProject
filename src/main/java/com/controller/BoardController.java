@@ -56,9 +56,10 @@ public class BoardController {
 	
 	//게시판 글 수정
 	@RequestMapping(value = "/loginCheck/boardUpdate")
-	public String boardUpdate(BoardDTO dto) {
+	public String boardUpdate(BoardDTO dto, HttpSession session) {
 		service.boardUpdate(dto);
 		System.out.println("업데이트 내용:"+dto);
+		session.setAttribute("update", "수정되었습니다.");
 		return "redirect:../boardRetrieve?num="+dto.getNum();
 	}
 }
