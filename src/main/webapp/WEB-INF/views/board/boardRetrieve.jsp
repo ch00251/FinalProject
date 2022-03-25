@@ -84,7 +84,7 @@
 	if(id.equals(userid)){ %>
 		<a class="btn btn-outline-dark" href="loginCheck/boardList">목록 보기</a>
 		<a class="btn btn-outline-dark" href="boardUpdate?num=<%=num%>">수정하기</a>
-		<a class="btn btn-outline-dark" href="#">삭제하기</a>
+		<a class="btn btn-outline-dark" href="loginCheck/boardDelete?num=<%=num%>">삭제하기</a>
 	<%}else{%>
 		<a class="btn btn-outline-dark" href="loginCheck/boardList">목록 보기</a>
 	<%}%>

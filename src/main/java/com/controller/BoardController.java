@@ -8,9 +8,11 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -51,7 +53,7 @@ public class BoardController {
 		service.boardInsert(dto);
 		System.out.println("게시판 insert:"+dto);
 		session.setAttribute("success", "등록되었습니다.");
-		return "redirect:boardList";
+		return "redirect:loginCheck/boardList";
 	}
 	
 	//게시판 글 수정
@@ -61,5 +63,14 @@ public class BoardController {
 		System.out.println("업데이트 내용:"+dto);
 		session.setAttribute("update", "수정되었습니다.");
 		return "redirect:../boardRetrieve?num="+dto.getNum();
+	}
+	
+	//게시판 글 삭제
+	@RequestMapping(value = "/loginCheck/boardDelete")
+	public String boardDelete(int num, HttpSession session) {
+		System.out.println(num);
+		service.boardDelete(num);
+		session.setAttribute("success", "삭제되었습니다.");
+		return "redirect:boardList";
 	}
 }

@@ -37,5 +37,10 @@ public class BoardDAO {
 		// TODO Auto-generated method stub
 		template.update("BoardMapper.boardUpdate", dto);
 	}
+
+	public void boardDelete(int num) {
+		// TODO Auto-generated method stub
+		template.delete("BoardMapper.boardDelete", num);
+	}
 	
 }
