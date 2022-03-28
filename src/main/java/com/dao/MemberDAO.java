@@ -17,5 +17,10 @@ public class MemberDAO {
 		// TODO Auto-generated method stub
 		return template.selectOne("MemberMapper.login", map);
 	}
+
+	public MemberDTO mypage(String userid) {
+		// TODO Auto-generated method stub
+		return template.selectOne("MemberMapper.mypage", userid);
+	}
 	
 }

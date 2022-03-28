@@ -17,4 +17,9 @@ public class MemberService {
 		// TODO Auto-generated method stub
 		return dao.login(map);
 	}
+
+	public MemberDTO mypage(String userid) {
+		// TODO Auto-generated method stub
+		return dao.mypage(userid);
+	}
 }

@@ -15,6 +15,7 @@
 	<mvc:view-controller path="/boardInsertForm" view-name="boardInsertForm"/>
 	<mvc:view-controller path="/boardUpdate" view-name="boardUpdate"/>
 	<mvc:view-controller path="loginForm" view-name="loginForm"/>
+	<mvc:view-controller path="/mypage" view-name="mypage"/>
 <!-- web-inf 폴더는 반드시 리소스 등록 후 사용 -->
 <mvc:resources location="/WEB-INF/views/images/" mapping="/images/**"></mvc:resources>
 <mvc:resources location="/WEB-INF/SmartEditor/" mapping="/SmartEditor/**"></mvc:resources>
